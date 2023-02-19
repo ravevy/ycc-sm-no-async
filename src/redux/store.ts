@@ -7,3 +7,5 @@ export const store = configureStore({
     playlist: playlistReducer,
   },
 });
+
+export type RootState = ReturnType<typeof store.getState>;

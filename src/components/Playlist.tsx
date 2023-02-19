@@ -1,13 +1,11 @@
-import {
-  BaseSyntheticEvent,
-  ButtonHTMLAttributes,
-  SyntheticEvent,
-} from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { PlaylistTypes, selectItem } from "../redux/Playlist/PlaylistSlice";
+import { RootState } from "../redux/store";
 
 export const Playlist = () => {
-  const value: PlaylistTypes = useSelector((state: any) => state.playlist);
+  const value: PlaylistTypes = useSelector(
+    (state: RootState) => state.playlist
+  );
   const dispatch = useDispatch();
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
